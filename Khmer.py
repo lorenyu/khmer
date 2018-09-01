@@ -12,12 +12,17 @@ class InvalidMoveError(BaseError):
 
 class Khmer:
 
+    # player_a_cards: list of Card
+    # player_b_cards: list of Card
+    # table_cards: list of Card
+    # discard_cards: list of Card
+    # current_player: 'a' | 'b'
     def __init__(self, player_a_cards, player_b_cards, table_cards, discard_cards, current_player):
         self.player_a_cards = set(player_a_cards)
         self.player_b_cards = set(player_b_cards)
         self.table_cards = list(table_cards)
         self.discard_cards = set(discard_cards)
-        self.current_player = 'b'
+        self.current_player = current_player
         self.has_game_ended = False
         self.winner = None
 
